@@ -10,7 +10,7 @@ Aplicación AdaKitten 🐈
 Descripción de la aplicación
 El objetivo de la aplicación es guardar información general sobre gatos, y hemos elegido hacerlo con los gatos de las Adalabers. Esta aplicación es replicable y extensible a cualquier temática: perros, listado de productos, contactos.
 
-Adacats Aplicación
+![Adacats Aplicación]([https://ejemplo.com/mi-imagen.jpg](https://books.adalab.es/~gitbook/image?url=https%3A%2F%2F2908775143-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FFeL5m4e6ES4PMjY0BYJw%252Fuploads%252Fgit-blob-e98c503533b258a1aa8d8490324a63b58e9455ed%252Fadakitten_template.png%3Falt%3Dmedia&width=768&dpr=4&quality=100&sign=b9df8e90&sv=2))
 
 La aplicación está compuesta por una única página que contiene:
 
