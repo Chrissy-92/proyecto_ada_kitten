@@ -1,4 +1,8 @@
 "use strict";
+const btnAddKitten=document.querySelector(".js-btn-add");
+const catlist=document.querySelector(".js-list");
+
+
 const kittenOne = `<li class="card">
             <article>
               <img
@@ -46,10 +50,17 @@ const kittenThree= `<li class="card js-kittenthree">
 </p>
 </li>`;
 
-//const catlist=document.querySelector(".js-list");
 
-//catlist.innerHTML =  ${kittenOne} + ${kittenTwo} + ${kittenThree}; 
 
+
+catlist.innerHTML=  kittenOne + kittenTwo + kittenThree; 
+
+
+btnAddKitten.addEventListener("click", ()=>{
+const hiddenmenu=document.querySelector(".js-new-form");
+hiddenmenu.classList.toggle("hidden")
+
+});
 
 
 
