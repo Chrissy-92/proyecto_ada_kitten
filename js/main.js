@@ -58,5 +58,5 @@ btnAddKitten.addEventListener("click", () => {
 });
 
 btnCancel.addEventListener("click", () => {
-  btnCancel.classList.remove("preventDefault");
+  hiddenMenu.classList.add("collapsed");
 });
