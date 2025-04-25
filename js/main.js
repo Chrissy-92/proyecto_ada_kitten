@@ -1,7 +1,8 @@
 "use strict";
-const btnAddKitten=document.querySelector(".js-btn-add");
-const catlist=document.querySelector(".js-list");
-
+const btnAddKitten = document.querySelector(".js-btn-add");
+const catList = document.querySelector(".js-list");
+const hiddenMenu = document.querySelector(".js-new-form");
+const btnCancel = document.querySelector(".js-cancel");
 
 const kittenOne = `<li class="card">
             <article>
@@ -20,7 +21,7 @@ const kittenOne = `<li class="card">
             </article>
           </li>`;
 
-  const kittenTwo=  `<li class="card js-kittentwo">
+const kittenTwo = `<li class="card js-kittentwo">
   <img
     class="card_img"
     src="https://dev.adalab.es/sphynx-gato.webp"
@@ -35,7 +36,7 @@ const kittenOne = `<li class="card">
   </p>
 </li>`;
 
-const kittenThree= `<li class="card js-kittenthree">
+const kittenThree = `<li class="card js-kittenthree">
 <img
   class="card_img"
   src="https://dev.adalab.es/maine-coon-cat.webp"
@@ -50,22 +51,12 @@ const kittenThree= `<li class="card js-kittenthree">
 </p>
 </li>`;
 
+catList.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-
-
-catlist.innerHTML=  kittenOne + kittenTwo + kittenThree; 
-
-
-btnAddKitten.addEventListener("click", ()=>{
-const hiddenmenu=document.querySelector(".js-new-form");
-hiddenmenu.classList.toggle("hidden")
-
+btnAddKitten.addEventListener("click", () => {
+  hiddenMenu.classList.toggle("collapsed");
 });
 
-
-
-
-
-
-
-
+btnCancel.addEventListener("click", () => {
+  btnCancel.classList.remove("preventDefault");
+});
