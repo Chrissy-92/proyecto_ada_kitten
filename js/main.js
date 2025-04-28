@@ -3,6 +3,10 @@ const btnAddKitten = document.querySelector(".js-btn-add");
 const catList = document.querySelector(".js-list");
 const hiddenMenu = document.querySelector(".js-new-form");
 const btnCancel = document.querySelector(".js-cancel");
+const formAddNewKitten = document.querySelector(".js-form");
+const kittenDesc1 =  "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente."; 
+const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.";
+const kittenDesc3 = "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta."; 
 
 const kittenOne = `<li class="card">
             <article>
@@ -14,9 +18,7 @@ const kittenOne = `<li class="card">
               <h3 class="card_title">Anastacio</h3>
               <h4 class="card_race">Siamés</h4>
               <p class="card_description">
-                Porte elegante, su patrón de color tan característico y sus ojos
-                de un azul intenso, pero su historia se remonta a Asía al menos
-                hace 500 años, donde tuvo su origen muy posiblemente.
+              ${kittenDesc1}
               </p>
             </article>
           </li>`;
@@ -30,9 +32,7 @@ const kittenTwo = `<li class="card js-kittentwo">
   <h3 class="card_title">Fiona</h3>
   <h4 class="card_race">Sphynx</h4>
   <p class="card_description">
-    Produce fascinación y curiosidad. Exótico, raro, bello, extraño…
-    hasta con pinta de alienígena han llegado a definir a esta raza
-    gatuna que se caracteriza por la «ausencia» de pelo.
+  ${kittenDesc2}
   </p>
 </li>`;
 
@@ -45,9 +45,7 @@ const kittenThree = `<li class="card js-kittenthree">
 <h3 class="card_title">Cielo</h3>
 <h4 class="card_race">Maine Coon</h4>
 <p class="card_description">
-  Tienen la cabeza cuadrada y los ojos simétricos, por lo que su
-  bella mirada se ha convertido en una de sus señas de identidad.
-  Sus ojos son grandes y las orejas resultan largas y en punta.
+${kittenDesc3}
 </p>
 </li>`;
 
@@ -57,6 +55,14 @@ btnAddKitten.addEventListener("click", () => {
   hiddenMenu.classList.toggle("collapsed");
 });
 
-btnCancel.addEventListener("click", () => {
+btnCancel.addEventListener("click", (event) => {
+  event.preventDefault();
   hiddenMenu.classList.add("collapsed");
+  formAddNewKitten.reset();
+
+});
+
+searchButton.addEventListener("click", (ev) => {
+  ev.preventDefault();
+  const descriptionSearchText = input_search_desc.value; // Recoge el valor del input de la descripción en una variable
 });
