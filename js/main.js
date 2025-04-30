@@ -7,7 +7,13 @@ const formAddNewKitten = document.querySelector(".js-form");
 
 const searchButton=document.querySelector(".js_button-search");
 
-const input_search_desc=document.querySelector(".js_in_search_desc");
+const inputSearchDesc=document.querySelector(".js_in_search_desc");
+
+const inputRace=document.querySelector(".js_inputRace");
+
+const kittenRace1 = 'Siamés';
+const kittenRace2 = 'Sphynx';
+const kittenRace3 = 'Maine Coon';
 
 const kittenDesc1 =  "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente."; 
 const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.";
@@ -21,7 +27,7 @@ const kittenOne = `<li class="card">
                 alt="siames-cat"
               />
               <h3 class="card_title">Anastacio</h3>
-              <h4 class="card_race">Siamés</h4>
+              <h4 class="card_race">${kittenRace1}</h4>
               <p class="card_description">
               ${kittenDesc1}
               </p>
@@ -35,7 +41,7 @@ const kittenTwo = `<li class="card js-kittentwo">
     alt="sphynx-cat"
   />
   <h3 class="card_title">Fiona</h3>
-  <h4 class="card_race">Sphynx</h4>
+  <h4 class="card_race">${kittenRace2}</h4>
   <p class="card_description">
   ${kittenDesc2}
   </p>
@@ -48,7 +54,7 @@ const kittenThree = `<li class="card js-kittenthree">
   alt="maine-coon-cat"
 />
 <h3 class="card_title">Cielo</h3>
-<h4 class="card_race">Maine Coon</h4>
+<h4 class="card_race">${kittenRace3}</h4>
 <p class="card_description">
 ${kittenDesc3}
 </p>
@@ -69,7 +75,7 @@ btnCancel.addEventListener("click", (event) => {
 
 searchButton.addEventListener("click", (ev) => {
   ev.preventDefault();
-  const descriptionSearchText = input_search_desc.value; // Recoge el valor del input de la descripción en una variable
+  const descriptionSearchText = inputSearchDesc.value; // Recoge el valor del input de la descripción en una variable
 
   catList.innerHTML ='';
 
@@ -87,4 +93,15 @@ searchButton.addEventListener("click", (ev) => {
     catList.innerHTML+=kittenThree;  
    
   }
+
+  // const breedText = inputRace.value;
+  // // Recoge el valor del input de la raza en una variable
+
+  // if (kittenRace1 === ""){
+  //   breedText = `Uy que despiste, no sabemos su raza`;
+  // } else {
+  //   breedText = kittenRace1;
+  // }
+  
 });
+
