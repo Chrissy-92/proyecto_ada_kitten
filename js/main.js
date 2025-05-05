@@ -1,4 +1,7 @@
 "use strict";
+
+//QUERYSELECTOR 
+
 const btnAddKitten = document.querySelector(".js-btn-add");
 const catList = document.querySelector(".js-list");
 const hiddenMenu = document.querySelector(".js-new-form");
@@ -9,11 +12,27 @@ const searchButton=document.querySelector(".js_button-search");
 
 const inputSearchDesc=document.querySelector(".js_in_search_desc");
 
-const inputRace=document.querySelector(".js_inputRace");
+const inputRace=document.querySelector(".js-input-race");
 
-const kittenRace1 = 'Siamés';
+
+
+//VARIABLES DE DATOS
+
+/*const kittenRace1 = 'Siamés';
 const kittenRace2 = 'Sphynx';
-const kittenRace3 = 'Maine Coon';
+const kittenRace3 = 'Maine Coon';*/
+//OBJETO
+
+const raceKitten= {
+  kittenRace1:"Siamés",
+  kittenRace2:"Sphynx",
+  kittenRace3: "Uy que despiste,no sabemos su raza",
+  /*"Maine Coon",*/
+  
+}
+console.log(raceKitten.kittenRace1);
+
+
 
 const kittenDesc1 =  "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente."; 
 const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.";
@@ -27,7 +46,7 @@ const kittenOne = `<li class="card">
                 alt="siames-cat"
               />
               <h3 class="card_title">Anastacio</h3>
-              <h4 class="card_race">${kittenRace1}</h4>
+              <h4 class="card_race">${raceKitten.kittenRace1}</h4>
               <p class="card_description">
               ${kittenDesc1}
               </p>
@@ -41,7 +60,7 @@ const kittenTwo = `<li class="card js-kittentwo">
     alt="sphynx-cat"
   />
   <h3 class="card_title">Fiona</h3>
-  <h4 class="card_race">${kittenRace2}</h4>
+  <h4 class="card_race">${raceKitten.kittenRace2}</h4>
   <p class="card_description">
   ${kittenDesc2}
   </p>
@@ -54,13 +73,17 @@ const kittenThree = `<li class="card js-kittenthree">
   alt="maine-coon-cat"
 />
 <h3 class="card_title">Cielo</h3>
-<h4 class="card_race">${kittenRace3}</h4>
+<h4 class="card_race">${raceKitten.kittenRace3}</h4>
 <p class="card_description">
 ${kittenDesc3}
 </p>
 </li>`;
 
+//FUNCIONES Y EVENTOS
+
 catList.innerHTML = kittenOne + kittenTwo + kittenThree;
+//Aquí mostramos los 3 cromos de los gatitos en el DOM desde JS
+
 
 btnAddKitten.addEventListener("click", () => {
   hiddenMenu.classList.toggle("collapsed");
@@ -75,33 +98,41 @@ btnCancel.addEventListener("click", (event) => {
 
 searchButton.addEventListener("click", (ev) => {
   ev.preventDefault();
-  const descriptionSearchText = inputSearchDesc.value; // Recoge el valor del input de la descripción en una variable
+  const descriptionSearchText = inputSearchDesc.value.trim().toLowerCase(); // Recoge el valor del input de la descripción en una variable
+
+  const breedText= inputRace.value.trim().toLowerCase();
+  //Recoge el valor del input de la raza en una variable
 
   catList.innerHTML ='';
 
-  if (kittenDesc1.includes(descriptionSearchText)){
+  if (
+    (descriptionSearchText === '' && breedText === '') ||
+   (descriptionSearchText !== '' && kittenDesc1.toLowerCase().includes(descriptionSearchText)) ||(breedText !== '' && raceKitten.kittenRace1.toLowerCase().includes (breedText)))
+    {
     catList.innerHTML+=kittenOne;  
    
   }
 
-  if (kittenDesc2.includes(descriptionSearchText)){
+  if (
+    (descriptionSearchText === '' && breedText === '') ||
+    (descriptionSearchText !== '' && kittenDesc2.toLowerCase().includes(descriptionSearchText)) ||(breedText !== '' && raceKitten.kittenRace2.toLowerCase().includes (breedText)))
+     {
     catList.innerHTML+=kittenTwo; 
    
   }
 
-  if (kittenDesc3.includes(descriptionSearchText)){
-    catList.innerHTML+=kittenThree;  
+  if (
+    (descriptionSearchText === '' && breedText === '') ||
+    (descriptionSearchText !== '' && kittenDesc3.toLowerCase().includes(descriptionSearchText)) ||(breedText !== '' && raceKitten.kittenRace3.toLowerCase().includes (breedText)))
+     {
+    catList.innerHTML+=kittenThree; 
+    } 
    
-  }
+   });
 
-  // const breedText = inputRace.value;
-  // // Recoge el valor del input de la raza en una variable
-
-  // if (kittenRace1 === ""){
-  //   breedText = `Uy que despiste, no sabemos su raza`;
-  // } else {
-  //   breedText = kittenRace1;
-  // }
   
-});
 
+ 
+ 
+
+   
