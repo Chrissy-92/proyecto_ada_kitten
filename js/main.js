@@ -15,19 +15,15 @@ const inputSearchDesc=document.querySelector(".js_in_search_desc");
 const inputRace=document.querySelector(".js-input-race");
 
 const kittenImg1= "https://dev.adalab.es/gato-siames.webp";
-const kittenName1= "Anastacio";
+const kittenName1= "Anastacio".toUpperCase();
+const kittenDesc1 =  "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente."; 
 
 const kittenImg2= "https://dev.adalab.es/sphynx-gato.webp";
-const kittenName2= "Fiona";
+const kittenName2= "Fiona".toUpperCase();
+const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.";
 
 const kittenImg3= "https://dev.adalab.es/maine-coon-cat.webp";
-const kittenName3= "Cielo";
-
-
-
-
-const kittenDesc1 =  "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente."; 
-const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.";
+const kittenName3= "Cielo".toUpperCase();
 const kittenDesc3 = "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta."; 
 
 //OBJETO
@@ -47,7 +43,7 @@ const kittenOne = `<li class="card">
                 src= ${kittenImg1}
                 alt="siames-cat"
               />
-              <h3 class="card_title"> ${kittenName1}  </h3>
+              <h3 class="card_title"> ${kittenName1} </h3>
               <h4 class="card_race">${raceKitten.kittenRace1}</h4>
               <p class="card_description">
               ${kittenDesc1}
@@ -74,7 +70,7 @@ const kittenThree = `<li class="card js-kittenthree">
   src=${kittenImg3} 
   alt="maine-coon-cat"
 />
-<h3 class="card_title">${kittenName3} /h3>
+<h3 class="card_title">${kittenName3} </h3>
 <h4 class="card_race">${raceKitten.kittenRace3}</h4>
 <p class="card_description">
 ${kittenDesc3}
@@ -89,9 +85,25 @@ catList.innerHTML = kittenOne + kittenTwo + kittenThree;
 //Aquí mostramos los 3 cromos de los gatitos en el DOM desde JS
 
 
-btnAddKitten.addEventListener("click", () => {
-  hiddenMenu.classList.toggle("collapsed");
-});
+function showNewCatForm() {
+  hiddenMenu.classList.remove("collapsed");
+}
+function hideNewCatForm() {
+  hiddenMenu.classList.add("collapsed");
+}
+
+function handleClickNewCatForm() {
+    //hiddenMenu.classList.toggle('collapsed');
+  if (hiddenMenu.classList.contains("collapsed")) {
+    showNewCatForm();
+    //hiddenMenu.classList.remove("collapsed");
+  } else {
+    hideNewCatForm();
+  }
+}  
+
+btnAddKitten.addEventListener( "click", handleClickNewCatForm );
+
 
 btnCancel.addEventListener("click", (event) => {
   event.preventDefault();
