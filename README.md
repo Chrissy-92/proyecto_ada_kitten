@@ -1,4 +1,4 @@
-<H1>Ejercicio para el pair programming</H1>
+<H1>Ejercicio para el pair programming 🐱‍💻</H1>
 Ejercicio de práctica con JS durante la hora de pair programming. Este ejercicio es incremental, es decir, cada día vamos a ir añadiendo las nuevas funcionalidades que hemos aprendido.
 
 En estos materiales encontraréis el enunciado de las tareas que se deben realizar cada día.
